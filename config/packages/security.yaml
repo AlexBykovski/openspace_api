@@ -4,6 +4,9 @@ security:
         Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
+        chain_provider:
+            chain:
+                providers: [ users_in_memory, users_in_db ]
         users_in_memory:
             memory:
                 users:
@@ -15,6 +18,10 @@ security:
                         password: '$2y$13$TC/91vvwMmK1ggOq.yx1gucZLu7ue.V/oHtoN8534uyY4B3MZeD5O',
                         roles: ['ROLE_ADMIN']
                     }
+        users_in_db:
+            entity:
+                class: App\Entity\User
+                property: phone
 
     firewalls:
         dev:
@@ -23,7 +30,7 @@ security:
         main:
             pattern: ^/
             lazy: true
-            provider: users_in_memory
+            provider: chain_provider
             form_login:
                 login_path: app_login
                 check_path: app_login
