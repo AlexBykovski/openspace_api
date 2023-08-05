@@ -11,7 +11,7 @@ security:
             memory:
                 users:
                     admin: {
-                          password: '$2y$13$TC/91vvwMmK1ggOq.yx1gucZLu7ue.V/oHtoN8534uyY4B3MZeD5O',
+                          password: '$2y$13$TC/91vvwMmK1ggOq.yx1gucZLu7ue.V/oHtoN8534uyY4B3MZeD5O', #password
                           roles: ['ROLE_ADMIN']
                     }
                     frontend: {
