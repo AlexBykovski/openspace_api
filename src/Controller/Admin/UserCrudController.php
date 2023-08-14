@@ -23,18 +23,17 @@ class UserCrudController extends AbstractCrudController
             ->onlyOnIndex();
         yield TextField::new('country', 'Страна')
             ->onlyOnIndex();
-        yield ArrayField::new('roles', 'Роли');
-        yield ArrayField::new('isWriter', 'Райт')
-            ->setTemplatePath('/admin/user/role/is_has_role.html.twig')
+        yield ArrayField::new(User::ROLE_ARTICLE_WRITER, 'Райт')
+            ->setTemplatePath('/admin/user/role/is_role.html.twig')
             ->onlyOnIndex();
-        yield ArrayField::new('isVip', 'Vip')
-            ->setTemplatePath('/admin/user/role/is_has_role.html.twig')
+        yield ArrayField::new(User::ROLE_VIP, 'Vip')
+            ->setTemplatePath('/admin/user/role/is_role.html.twig')
             ->onlyOnIndex();
-        yield ArrayField::new('isNoAds', 'No Ads')
-            ->setTemplatePath('/admin/user/role/is_has_role.html.twig')
+        yield ArrayField::new(User::ROLE_NO_ADS, 'No Ads')
+            ->setTemplatePath('/admin/user/role/is_role.html.twig')
             ->onlyOnIndex();
-        yield ArrayField::new('isAdmin', 'Admin')
-            ->setTemplatePath('/admin/user/role/is_has_role.html.twig')
+        yield ArrayField::new(User::ROLE_ADMIN, 'Admin')
+            ->setTemplatePath('/admin/user/role/is_role.html.twig')
             ->onlyOnIndex();
     }
 }

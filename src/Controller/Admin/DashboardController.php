@@ -50,7 +50,9 @@ class DashboardController extends AbstractDashboardController
     public function configureAssets(): Assets
     {
         return parent::configureAssets()
-            ->addCssFile('admin/css/admin.css')
-            ->addJsFile('admin/js/test.js');
+            ->addCssFile('css/admin/admin.css')
+            ->addJsFile('js/admin/toggle-bool-state.js')
+            ->addJsFile('js/admin/http-request.js')
+            ->addJsFile('js/admin/common-functions.js');
     }
 }

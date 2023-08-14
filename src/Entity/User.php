@@ -199,26 +199,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->addRole($role);
     }
 
-    public function isVip(): bool
-    {
-        return in_array(self::ROLE_VIP, $this->roles);
-    }
-
-    public function isWriter(): bool
-    {
-        return in_array(self::ROLE_ARTICLE_WRITER, $this->roles);
-    }
-
-    public function isNoAds(): bool
-    {
-        return in_array(self::ROLE_NO_ADS, $this->roles);
-    }
-
-    public function isAdmin(): bool
-    {
-        return in_array(self::ROLE_ADMIN, $this->roles);
-    }
-
     public function __toString(): string
     {
         return (string)$this->getPhone();
