@@ -1,0 +1,18 @@
+{% set fieldName = field.property %}
+{% set initState = entity.instance.hasRole(fieldName) %}
+
+<div class="js-toggle-bool"
+     data-url="{{ path('toggle_role_admin', {id: entity.instance.id}) }}"
+     data-id="{{ entity.instance.id }}"
+     data-field="{{ fieldName }}"
+     data-init-value="{{ initState ? 'true' : 'false' }}"
+>
+    <span class="label label-success js-true-value" style="
+        cursor: pointer;
+        display: {% if initState %}inline{% else %}none{% endif %};
+    ">да</span>
+    <span class="label label-danger js-false-value" style="
+        cursor: pointer;
+        display: {% if initState %}none{% else %}inline{% endif %};
+">нет</span>
+</div>

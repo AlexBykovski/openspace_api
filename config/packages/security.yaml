@@ -11,7 +11,7 @@ security:
             memory:
                 users:
                     admin: {
-                          password: '$2y$13$TC/91vvwMmK1ggOq.yx1gucZLu7ue.V/oHtoN8534uyY4B3MZeD5O',
+                          password: '$2y$13$TC/91vvwMmK1ggOq.yx1gucZLu7ue.V/oHtoN8534uyY4B3MZeD5O', #password
                           roles: ['ROLE_ADMIN']
                     }
                     frontend: {
@@ -32,8 +32,8 @@ security:
             lazy: true
             provider: chain_provider
             form_login:
-                login_path: app_login
-                check_path: app_login
+                login_path: admin_login
+                check_path: admin_login
                 enable_csrf: true
                 use_referer: true
                 default_target_path: admin
